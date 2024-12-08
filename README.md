@@ -134,7 +134,7 @@ python app.py --port=5001
 ## 👨‍💻 Contributing
 Contributions are welcome! If you have any improvements, please fork the repository, make your changes, and submit a pull request.
 
-📜 License
+## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
