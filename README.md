@@ -49,16 +49,15 @@ Visual Studio Code (VS Code): Optional, but recommended for coding and debugging
 
 Install the required Python packages using the following command:
 
-bash
-Copy code
-pip install Flask Flask-Bcrypt bcrypt
+       pip install Flask Flask-Bcrypt bcrypt
 ## Run the Application
 Start the Flask development server:
-python app.py
+
+       python app.py
 ### Access the Application
 Open your browser and visit:
 
-http://127.0.0.1:5000
+#### http://127.0.0.1:5000
 ## 🔑 How to Use
 Register a New Account:
 
