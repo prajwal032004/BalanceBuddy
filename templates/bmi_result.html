@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Result - BalanceBuddy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>BalanceBuddy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- BMI Result Section -->
+    <section class="result-section">
+        <h2>Your BMI Result</h2>
+
+        <p>Your BMI is <strong>{{ bmi }}</strong></p>
+        <p>Age: {{ age }} years</p>
+        <p>Gender: {{ gender }}</p>
+
+        <!-- Display BMI Category -->
+        <h3>Category:</h3>
+        <p class="bmi-category">
+            {% if bmi < 18.5 %}
+                <span class="underweight">Underweight</span>: You should consider gaining some weight for a healthier lifestyle.
+            {% elif 18.5 <= bmi < 24.9 %}
+                <span class="normal-weight">Normal weight</span>: Keep up the great work! Continue maintaining a balanced lifestyle.
+            {% elif 25 <= bmi < 29.9 %}
+                <span class="overweight">Overweight</span>: Try incorporating more physical activities and a balanced diet.
+            {% else %}
+                <span class="obese">Obese</span>: It's time to focus on a healthy diet and regular exercise to manage your weight.
+            {% endif %}
+        </p>
+
+        <!-- Go Back Button -->
+        <a href="{{ url_for('bmi_calculator') }}" class="go-back-btn">Go Back and Calculate Again</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 BalanceBuddy. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

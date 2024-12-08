@@ -1,0 +1,426 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f7c6c7;
+    text-decoration: underline;
+}
+
+nav ul li a.active {
+    color: #f7c6c7;
+}
+
+/* Auth Form Section */
+.auth-form-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    height: 80vh;
+    padding: 50px;
+}
+
+.auth-form {
+    background-color: white;
+    padding: 15px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.auth-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.auth-form button:hover {
+    background-color: #555;
+}
+
+.auth-form p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.auth-form a {
+    color: #333;
+    text-decoration: none;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+.hero-image {
+    width: 50%;
+    /* Makes the image take up the full width of the container */
+    height: auto;
+    /* Keeps the aspect ratio intact */
+    object-fit: cover;
+    /* Ensures the image covers the space, even if it needs to be cropped */
+    max-height: 600px;
+    /* Limits the image height to 500px (adjust as needed) */
+    display: block;
+    /* Ensures the image is treated as a block element */
+    margin: 0 auto;
+    /* Centers the image horizontally */
+}
+
+/* Flash Messages */
+.flash-messages {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flash-messages .error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-form {
+        padding: 15px;
+        max-width: 90%;
+    }
+}
+
+/* Home Page Styles */
+.home-section {
+    background-color: #0000001c;
+    padding: 50px;
+    text-align: center;
+}
+
+.home-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.home-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.home-section .home-image {
+    width: 80%;
+    margin: 20px 0;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.home-section .author {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Login and Register Form Section */
+.login-form,
+.register-form {
+    background-color: #fff;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2,
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.login-form label,
+.register-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.login-form input,
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button,
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.login-form button:hover,
+.register-form button:hover {
+    background-color: #555;
+}
+
+.login-form p,
+.register-form p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.login-form a,
+.register-form a {
+    color: #333;
+    text-decoration: none;
+}
+
+.login-form a:hover,
+.register-form a:hover {
+    text-decoration: underline;
+}
+
+/* BMI Calculator Page Styling */
+.bmi-calculator-section {
+    background-color: #f4f7fc;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.bmi-calculator-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.bmi-calculator-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bmi-calculator-section input,
+.bmi-calculator-section select,
+.bmi-calculator-section button {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.bmi-calculator-section button {
+    background-color: #00b0ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.bmi-calculator-section button:hover {
+    background-color: #0091ea;
+}
+
+/* BMI Result Page Styling */
+.result-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.result-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.result-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.result-section h3 {
+    font-size: 1.5rem;
+    color: #0091ea;
+    margin-top: 20px;
+}
+
+.result-section p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.result-section a {
+    color: #00b0ff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: 2px solid #00b0ff;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.result-section a:hover {
+    background-color: #00b0ff;
+    color: #fff;
+}
+
+/* Flash Messages Styling */
+.flash-messages {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.flash-messages .error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .bmi-calculator-section,
+    .result-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .bmi-calculator-section input,
+    .bmi-calculator-section select,
+    .bmi-calculator-section button {
+        width: 100%;
+    }
+}
+
+
+/* General Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}

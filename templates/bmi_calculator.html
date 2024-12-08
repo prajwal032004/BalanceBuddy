@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - BalanceBuddy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <!-- Logo image -->
+            <img src="{{ url_for('static', filename='images/logo0.jpg') }}" alt="BalanceBuddy Logo" height="50">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                {% if 'user' in session %} <!-- Check if the user is logged in -->
+                    <li><a href="{{ url_for('bmi_calculator') }}">BMI Calculator</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li> <!-- Logout link -->
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- BMI Calculator Section -->
+    <section class="bmi-calculator-section">
+        <h2>Calculate Your BMI</h2>
+        <form action="{{ url_for('bmi_calculator') }}" method="POST">
+            <label for="age">Age:</label>
+            <input type="number" name="age" required>
+
+            <label for="height">Height (in cm):</label>
+            <input type="number" step="0.1" name="height" required>
+
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" step="0.1" name="weight" required>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <button type="submit">Calculate BMI</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 BalanceBuddy. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
