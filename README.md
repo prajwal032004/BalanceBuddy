@@ -138,7 +138,7 @@ Contributions are welcome! If you have any improvements, please fork the reposit
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-🌟 Acknowledgments
+## 🌟 Acknowledgments
 
 Flask documentation: Flask Official Docs
 bcrypt documentation: bcrypt GitHub
