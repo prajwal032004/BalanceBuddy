@@ -92,8 +92,10 @@ Securely log out using the Logout link in the navigation bar.
 
 │   └── images/
 
-│       └── logo.jpg
+│                   ─└──── logo0.jpg
 
+│                   ─└────---------.jpg
+         
 │-- /templates
 
 │   ├── index.html
