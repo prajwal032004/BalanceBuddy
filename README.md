@@ -143,4 +143,11 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 Flask documentation: Flask Official Docs
 bcrypt documentation: bcrypt GitHub
+
+## Recommendations🙌 
+Run the create_database.py first to activate the database 
+
+Or
+It will run Properly after you run the program app.py
+
 Thank you for using BalanceBuddy! Happy Coding! 🚀
