@@ -150,4 +150,8 @@ Run the create_database.py first to activate the database
 Or
 It will run Properly after you run the program app.py
 
+## Link🔗
+Hosted on pythonanywhere.com
+https://prajwalab.pythonanywhere.com/
+
 Thank you for using BalanceBuddy! Happy Coding! 🚀
