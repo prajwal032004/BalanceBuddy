@@ -1,157 +1,153 @@
-# BMI Calculator - BalanceBuddy
+# BalanceBuddy BMI Calculator
+
 ## 📋 Project Overview
-BalanceBuddy is a web-based BMI (Body Mass Index) Calculator that helps users track their health by calculating their BMI based on their height, weight, age, and gender. It offers user authentication, allowing users to register, log in, and log out securely.
+
+BalanceBuddy is a web-based BMI (Body Mass Index) Calculator built with Flask and Python. It helps users track their health by calculating their BMI based on height, weight, age, and gender, with secure user authentication and a responsive design.
 
 ## 🚀 Features
-BMI Calculation: Calculate BMI based on height, weight, age, and gender.
 
-User Authentication: Secure user registration and login system.
-
-Password Hashing: Securely stores passwords using hashing algorithms.
-
-Flash Messages: Display user-friendly messages for login, registration, and error notifications.
-
-Responsive Design: Accessible on multiple devices (mobile, tablet, desktop).
+- **BMI Calculation**: Accurate BMI calculations with personalized recommendations
+- **User Authentication**: Secure registration and login system
+- **Data Persistence**: SQLite database for storing user data and BMI history
+- **Password Security**: Secure password hashing using bcrypt
+- **Flash Messages**: User-friendly notifications for actions and errors
+- **Responsive Design**: Clean interface that works across all devices
 
 ## 🛠️ Technologies Used
-### Languages
 
-HTML: Structure of the web pages.
+- **Backend Framework**: Flask
+- **Database**: SQLite
+- **Password Hashing**: Flask-Bcrypt
+- **Template Engine**: Jinja2
+- **Frontend**: HTML, CSS, JavaScript
+- **Form Handling**: Flask-WTF
+- **Session Management**: Flask-Login
 
-CSS: Styling and layout of the web interface.
+## 📦 Prerequisites
 
-Python: Backend logic using Flask.
+- Python 3.8 or higher
+- pip (Python package manager)
+- SQLite3
 
-SQL: Database for storing user data.
+## 🚀 Getting Started
 
-### Packages and Libraries
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/balancebuddy.git
+   cd balancebuddy
+   ```
 
-Flask: Lightweight web framework for Python.
+2. **Create and activate virtual environment**
+   ```bash
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On Unix or MacOS
+   source venv/bin/activate
+   ```
 
-Flask-Bcrypt: For secure password hashing.
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-SQLite: Lightweight database for storing user information.
+4. **Initialize the database**
+   ```bash
+   python init_db.py
+   ```
 
-bcrypt: Library for hashing passwords.
+5. **Start the application**
+   ```bash
+   python app.py
+   ```
 
-Jinja2: Templating engine for dynamic HTML rendering.
+6. **Access the application**
+   Visit `http://127.0.0.1:5000` in your browser
 
-## 📦 Requirements
-Before running the project, ensure you have the following installed:
+## 🏗️ Project Structure
 
-Python 3.x: Download from Python's official site.
+```
+balancebuddy/
+├── app/
+│   ├── __init__.py      # Flask application initialization
+│   ├── models/          # Database models
+│   ├── routes/          # Route handlers
+│   ├── forms/           # Form classes
+│   ├── utils/           # Utility functions
+│   └── templates/       # Jinja2 templates
+├── static/
+│   ├── css/            # Stylesheets
+│   ├── js/             # JavaScript files
+│   └── images/         # Image assets
+├── instance/
+│   └── database.db     # SQLite database
+├── tests/              # Unit tests
+├── app.py             # Application entry point
+├── init_db.py         # Database initialization script
+├── config.py          # Configuration settings
+├── requirements.txt   # Project dependencies
+└── README.md         # Project documentation
+```
 
-SQLite: Comes pre-installed with Python, but you can also download it here.
+## 🔑 Key Features Usage
 
-Visual Studio Code (VS Code): Optional, but recommended for coding and debugging. 
+### Registration
+1. Navigate to the registration page
+2. Enter your email, password, and personal details
+3. Submit the form to create your account
 
-### Python Libraries
+### BMI Calculation
+1. Log in to your account
+2. Go to the BMI Calculator page
+3. Enter your height, weight, age, and select gender
+4. View your BMI result and personalized recommendations
 
-Install the required Python packages using the following command:
+### View History
+1. Access your dashboard
+2. View your BMI calculation history
+3. Track your progress over time
 
-       pip install Flask Flask-Bcrypt bcrypt
-## Run the Application
-Start the Flask development server:
+## 🛡️ Security Features
 
-       python app.py
-### Access the Application
-Open your browser and visit:
+- Secure password hashing with bcrypt
+- CSRF protection
+- Session security
+- Input validation and sanitization
+- SQL injection prevention
+- XSS protection
 
-#### http://127.0.0.1:5000
-## 🔑 How to Use
-Register a New Account:
-
-Go to the Register page and create an account by entering your name, email, and password.
-#### Log In:
-
-After registration, log in using your credentials.
-#### Calculate BMI:
-
-Once logged in, access the BMI Calculator page, enter your height, weight, age, and gender, and calculate your BMI.
-#### Log Out:
-
-Securely log out using the Logout link in the navigation bar.
-## 🗄️ Project Structure
-## bmi-calculator/
-│-- app.py	
-
-│-- init_db.py
-
-│-- database.db
-
-│-- requirements.txt
-
-│-- README.md
-
-│-- LICENSE
-
-│-- /static
-
-│   ├── style.css
-
-│   └── images/
-
-│                   ─└──── logo0.jpg
-
-│                   ─└────---------.jpg
-         
-│-- /templates
-
-│   ├── index.html
-
-│   ├── login.html
-
-│   ├── register.html
-
-│   └── bmi_calculator.html
-
-app.py: Main Flask application.
-
-create_database.py: Initializes the SQLite database.
-
-database.db: SQLite database file.
-
-requirements.txt: List of dependencies.
-
-/static: Contains static files like CSS and images.
-
-/templates: HTML templates for the web pages.
-
-## 🛡️ Security
-Password Hashing: All passwords are securely hashed using bcrypt.
-
-User Authentication: Prevents unauthorized access to sensitive pages.
 ## 🐛 Troubleshooting
-#### Issue: Database file not found
-Solution: Ensure you have run create_database.py to create the database.db file.
 
-#### Issue: Flask app not starting
-Solution: Ensure your virtual environment is activated and dependencies are installed.
+### Common Issues
 
-#### Issue: Port conflict
-Solution: Use a different port when running Flask:
+1. **Database Initialization Error**
+   ```bash
+   # Remove existing database and reinitialize
+   rm instance/database.db
+   python init_db.py
+   ```
 
-python app.py --port=5001
-## 👨‍💻 Contributing
-Contributions are welcome! If you have any improvements, please fork the repository, make your changes, and submit a pull request.
+2. **Dependencies Issues**
+   ```bash
+   pip install --upgrade -r requirements.txt
+   ```
+
+3. **Server Issues**
+   - Check if port 5000 is available
+   - Ensure virtual environment is activated
+   - Verify database file exists
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the self License.
 
 ## 🌟 Acknowledgments
 
-Flask documentation: Flask Official Docs
-bcrypt documentation: bcrypt GitHub
+- Flask documentation
+- SQLite documentation
+- Python bcrypt library
+- Bootstrap framework
 
-## Recommendations🙌 
-Run the create_database.py first to activate the database 
+---
 
-Or
-It will run Properly after you run the program app.py
-
-## Link🔗
-Hosted on pythonanywhere.com
-https://prajwalab.pythonanywhere.com/
-
-Thank you for using BalanceBuddy! Happy Coding! 🚀
+Made with ❤️ by Prajwal
