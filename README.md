@@ -6,7 +6,7 @@ BalanceBuddy is a web-based BMI (Body Mass Index) Calculator built with Flask an
 
 ## 🔗Link
 
-https://prajwalab.pythonanywhere.com/
+[live website view ](https://prajwalab.pythonanywhere.com/)
 
 ## 🚀 Features
 
